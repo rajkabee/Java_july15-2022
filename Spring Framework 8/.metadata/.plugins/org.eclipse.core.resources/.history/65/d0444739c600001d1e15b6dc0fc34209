@@ -1,0 +1,20 @@
+package com.dursikshya.springBootDemo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.dursikshya.springBootDemo.model.entity.User;
+
+@Controller
+public class UserController {
+	@RequestMapping("/users")
+	public String users() {
+		User user = new User();
+		user.setId(123);
+		user.setName("Prabin Dhungana");
+		user.setEmail("Prabinda@gmail.com");
+		user.setActive(true);
+		User user2 = new User(231, "raghav Dhital", "raghav@gmail.com", false);
+		return "users";
+	}
+}

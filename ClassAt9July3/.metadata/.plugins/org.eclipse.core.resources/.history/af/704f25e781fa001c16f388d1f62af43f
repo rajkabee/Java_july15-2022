@@ -1,0 +1,7 @@
+package coreJava.basics.datatypes;
+
+public class GeneralIO {
+	public static void main(String[] args) {
+		System.out.print("Hello World!");
+	}
+}

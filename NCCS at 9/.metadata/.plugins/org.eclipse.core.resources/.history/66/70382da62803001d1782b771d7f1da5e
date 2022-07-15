@@ -1,0 +1,13 @@
+package coreJava.basics.OOP;
+
+public class App {
+	public static void main(String[] args) {
+		Product p = new Product();
+		p.id = 123;
+		p.name = "pulser";
+		p.manufacturer = "Bajaj";
+		
+		System.out.println(p.id+". "+p.name+"\t"+p.manufacturer);
+		
+	}
+}

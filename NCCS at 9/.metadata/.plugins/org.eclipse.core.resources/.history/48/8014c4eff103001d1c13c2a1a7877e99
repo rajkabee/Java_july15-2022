@@ -1,0 +1,5 @@
+package coreJava.basics.OOP.concepts.inheritance;
+
+public class Person {
+
+}

@@ -1,0 +1,7 @@
+package coreJava.basics.OOP.concepts.inheritance;
+
+public class Person {
+	int nationalId;
+	String name;
+	String address;
+}

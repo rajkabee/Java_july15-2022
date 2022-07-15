@@ -1,0 +1,5 @@
+package coreJava.basics.OOP.accessModifiers.test;
+
+public class Student {
+
+}

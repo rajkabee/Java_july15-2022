@@ -1,0 +1,5 @@
+package com.dursikshya.springBootDemo.student;
+
+public class StudentController {
+
+}

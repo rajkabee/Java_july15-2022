@@ -1,0 +1,11 @@
+package coreJava.basics.OOP.concepts.inheritance;
+
+public class Employee {
+	int nationalId;
+	String name;
+	String address;
+	int empId;
+	String dept;
+	String position;
+	float salary;
+}

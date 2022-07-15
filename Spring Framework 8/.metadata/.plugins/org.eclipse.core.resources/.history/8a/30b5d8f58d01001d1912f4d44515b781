@@ -1,0 +1,13 @@
+package com.dursikshya.springBootDemo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBootWithThymeleaf1Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootWithThymeleaf1Application.class, args);
+	}
+
+}

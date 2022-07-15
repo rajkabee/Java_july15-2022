@@ -1,0 +1,10 @@
+package coreJava.basics.controlStatements.loops;
+
+public class ForLoop {
+	int i;
+					
+	for(i=0;i<10;i++) {
+		System.out.println("Hello While loop!");
+		i++;
+	}
+}

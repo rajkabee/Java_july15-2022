@@ -1,0 +1,18 @@
+package coreJava.basics.datatypes;
+
+import java.util.Scanner;
+
+public class GeneralIO {
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your name:");
+		String name = sc.next();
+		System.out.println("Enter your age: ");
+		int x = sc.nextInt();
+		
+		//float f = sc.nextFloat();
+		
+		System.out.println(name+"\t"+age);
+	}
+}

@@ -1,0 +1,14 @@
+package coreJava.basics.OOP.concepts.encapsulation;
+
+public class Student {
+	private int id;
+	private String name;
+	private String email;
+	private float percentage;
+	public void setPercentage(float percentage) {
+		this.percentage = percentage;
+	}
+	public float getPercentage() {
+		return this.percentage;
+	}
+}

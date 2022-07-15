@@ -1,0 +1,10 @@
+package coreJava.basics;
+
+import java.util.Scanner;
+
+public class BasicIO {
+	public static void main(String[] args) {
+		System.out.println("Enter your age: ");
+		Scanner sc = new Scanner(System.in);
+	}
+}

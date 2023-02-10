@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<form action="/products/add" method="POST" enctype="multipart/form-data">
+		<label style="font-size: 24px; font-weight: bold;">Update Product From</label>
+		<input type="hidden" name="id" th:value="${product.id}">
+		<select name="category">
+			<option th:each="category:${categories}" th:value=${category.id} th:text=${category.name} th:checked="${product.getCategory().getId()}==${category.id} ? 'checked' : 'unchecked'">
+		</select>
+		<input type="text" name="name" placeholder="Product Name" th:value="${product.name}"/><br>
+		<input type="text" name="manufacturer" placeholder="Product Manufacturer" th:value="${product.manufacturer}"/><br>
+		<input type="text" name="description" placeholder="Product description" th:value="${product.description}"/><br>
+		<input type="number" name="unitPrice" placeholder="Unit Price" th:value="${product.unitPrice}"/><br>
+		<input type="file" name="image" placeholder="Product Image"><br>
+		<label>Active: </label><br>
+		<input class="radio" type="radio" name="active" value="true" th:checked="${product.active} ? 'checked' : 'unchecked'"><label>Active</label><br>
+		<input class="radio" type="radio" name="active" value="false" th:checked="${!product.active} ? 'checked' : 'unchecked'"><label>Inactive</label><br>
+		<label>Quantity: </label><br>
+		<input type="number" name="quantity" placholder="quantity">
+		<input id="submit" type="submit" name="submit" value="Add Product"/><br>
+		
+		
+	</form>
+	
+</body>
+</html>

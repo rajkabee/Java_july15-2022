@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<div th:replace="~{HtmlHead}">
+
+</div>
+<body>
+	<div class="container mt-5">
+	<h1 class="bg-warning text-white text-center"> Add Product Form</h1>
+	
+	<form action="add" method="post">
+  <div class="mb-3">
+    <label class="form-label">Product Name</label>
+    <input type="text" name="name" class="form-control" aria-describedby="emailHelp">  
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Manufacturer</label>
+    <input type="text" name="manufacturer" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Unit Price</label>
+    <input type="number" name="unitPrice" class="form-control" >
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" name="isActive" value="true" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">isActive</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+	
+	
+	</div>
+</body>
+</html>

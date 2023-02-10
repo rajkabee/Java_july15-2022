@@ -1,0 +1,16 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+     version="2.4">
+	<servlet>
+		<description>
+		</description>
+		<display-name>DeleteProductServlet</display-name>
+		<servlet-name>DeleteProductServlet</servlet-name>
+		<servlet-class>webAppCRUD.model.DeleteProductServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteProductServlet</servlet-name>
+		<url-pattern>/DeleteProductServlet</url-pattern>
+	</servlet-mapping>
+     </web-app>

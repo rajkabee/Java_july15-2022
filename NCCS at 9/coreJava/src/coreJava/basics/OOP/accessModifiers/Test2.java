@@ -6,8 +6,8 @@ public class Test2 {
 	public static void main(String[] args) {
 		Student st = new Student();
 		st.id = 12;
-		st.name = "Samriddhi";
-		st.percentage = 87.34f;
+		//st.name = "Samriddhi";
+		//st.percentage = 87.34f;
 		
 	}
 }

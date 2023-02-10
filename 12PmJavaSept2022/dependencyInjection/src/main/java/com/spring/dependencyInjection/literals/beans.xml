@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean id="smriti" class="com.spring.dependencyInjection.User">
+        	<property name="name" value="Smriti"/>
+        	<property name="address" value="Nepaltar"/>
+        	<property name="contact" value="9876556677"/>
+        </bean>
+        <bean id="rakshya" class="com.spring.dependencyInjection.User">
+        	<constructor-arg name="name" value="Rakshya"/>
+        	<constructor-arg name="address" value="Kirtipur"/>
+        	<constructor-arg name="contact" value="9863554777"/>
+        </bean>
+        
+        
+</beans>

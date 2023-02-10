@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<div th:replace="~{HtmlHead}">
+
+</div>
+<body>
+	<div class="container mt-5">
+	<h1 class="bg-warning text-white text-center"> Add Product Form</h1>
+	
+	<form action="update" method="post">
+	<input name="id" th:value="${product.id}" hidden>
+  <div class="mb-3">
+    <label class="form-label">Product Name</label>
+    <input type="text" th:value="${product.name}" name="name" class="form-control" aria-describedby="emailHelp">  
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Manufacturer</label>
+    <input type="text"  th:value="${product.manufacturer}" name="manufacturer" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Unit Price</label>
+    <input type="number"  th:value="${product.unitPrice}" name="unitPrice" class="form-control" >
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" name="isActive" value="true" class="form-check-input" id="exampleCheck1" th:checked="${product.isActive}">
+    <label class="form-check-label" for="exampleCheck1">isActive</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+	
+	
+	</div>
+</body>
+</html>

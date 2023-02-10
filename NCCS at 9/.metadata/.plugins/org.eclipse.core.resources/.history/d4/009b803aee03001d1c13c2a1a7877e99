@@ -1,7 +1,0 @@
-package coreJava.basics.OOP.accessModifiers.test;
-
-public class Student {
-	int id;
-	String name;
-	float percentage;
-}

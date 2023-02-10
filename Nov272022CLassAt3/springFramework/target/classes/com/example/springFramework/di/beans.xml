@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+		<context:annotation-config/>
+		<context:component-scan base-package="com.example.springFramework.di"/>
+        
+		<!-- 
+        <context:property-placeholder location="classpath:application.properties"/>
+		<bean id="pokhara" class="com.example.springFramework.di.Address">
+			<property name="id" value="2"/>
+			<property name="country" value="Nepal"/>
+			<property name="city" value="Pokhara"/>
+		</bean>
+		<bean id="lalitpur" class="com.example.springFramework.di.Address">
+			<property name="id" value="${address1.id}"/>
+			<property name="country" value="${address1.country}"/>
+			<property name="city" value="${address1.city}"/>
+		</bean>
+        <bean id="ktm" class="com.example.springFramework.di.Contact">
+        	<property name="id" value="123"/>
+        	<property name="address">
+				<bean class="com.example.springFramework.di.Address">
+					<property name="id" value="1"/>
+					<property name="country" value="Nepal"/>
+					<property name="city" value="Kathmandu"/>
+				</bean>
+			</property>
+        	<property name="phone" value="016657345"/>
+        </bean>
+        <bean id="pok" class="com.example.springFramework.di.Contact">
+        	<constructor-arg name="id" value="456"/>
+        	<constructor-arg name="address" ref="lalitpur"/>
+        	<constructor-arg name="phone" value="016344332"/>
+        </bean>
+         -->
+</beans>

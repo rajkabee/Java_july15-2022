@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Products</h1>
+	<a href="/products/add"><button>Add Product</button></a>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Manufacturer</th>
+				<th>Active</th>
+				<th>Actions</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="product:${products}">
+				<td th:text="${product.id}"></td>
+				<td th:text="${product.name}"></td>
+				<td th:text="${product.manufacturer}"></td>
+				<td th:text="${product.active}"></td>
+				<td>
+					<a th:href="'/products/update/'+${product.id}"><button>update</button></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</body>
+</html>

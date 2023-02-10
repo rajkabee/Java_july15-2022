@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+        <bean id="job" class="com.spring.dependencyInjection.autowiring.Job">
+        	<property name="position" value="Janitor"/>
+        	<property name="salary" value="18000"/>
+        </bean>
+      
+        <bean id="security" class="com.spring.dependencyInjection.autowiring.Job">
+        	<property name="position" value="Security"/>
+        	<property name="salary" value="23000"/>
+        </bean>
+        <bean id="sanjay" 
+        		class="com.spring.dependencyInjection.autowiring.User" 
+        		autowire="constructor"
+        		>
+        	<constructor-arg name="id" value="34"/>
+        	<constructor-arg name="name" value="Sanjay"/>
+        	<constructor-arg name="address" value="ktm"/>
+        	<!-- <property name="job" ref="janitor"/> -->
+        </bean>
+        	
+        
+        </beans>

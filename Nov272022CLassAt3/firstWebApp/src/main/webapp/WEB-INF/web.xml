@@ -1,0 +1,38 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ProductServlet</servlet-name>
+  	<display-name>ProductServlet</display-name>
+  	<description></description>
+  	<servlet-class>firstWebApp.ProductServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddProductServlet</servlet-name>
+  	<display-name>AddProductServlet</display-name>
+  	<description></description>
+  	<servlet-class>firstWebApp.AddProductServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProductUpdateServlet</servlet-name>
+  	<display-name>ProductUpdateServlet</display-name>
+  	<description></description>
+  	<servlet-class>firstWebApp.ProductUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ProductServlet</servlet-name>
+  	<!-- <url-pattern>/products/*</url-pattern>-->
+  	<url-pattern>/products</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddProductServlet</servlet-name>
+  	<url-pattern>/addProduct</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProductUpdateServlet</servlet-name>
+  	<url-pattern>/products/update</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+        <!--  -->
+        <context:property-placeholder location="classpath:/application.properties"/>
+        
+        <bean id="dataScience" class="com.example.springFrameworkDI.property.Category">
+   			<property name="id" value="2"/>
+   			<property name="name" value="Data Science"/>
+   		</bean>
+   		
+   		<bean id="category" class="com.example.springFrameworkDI.property.Category">
+   			<property name="id" value="3"/>
+   			<property name="name" value="Networking"/>
+   		</bean>
+   		
+        
+        <bean id="CCNA" 
+        class="com.example.springFrameworkDI.property.Course"
+        autowire="constructor">
+        	<constructor-arg name="id" value="${course.id}"/>
+        	<constructor-arg name="title" value="${course.name}"/>
+        	<constructor-arg name="duration" value="${course.duration}"/>
+        </bean>
+        
+</beans>

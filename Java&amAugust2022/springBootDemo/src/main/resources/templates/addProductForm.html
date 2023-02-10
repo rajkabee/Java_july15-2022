@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Product Form</title>
+<style>
+	form{
+		width: 500px;
+		margin: auto;
+	}
+	input{
+		width: 100%;
+		font-size: 24px;
+		
+	}
+	#submit{
+		text-align: center;
+		font-weight: bold;
+		background-color: green;
+	}
+	select{
+		display: block;
+		font-size: 24px;
+		width: 102%;
+		margin: 10px 0px;
+	}
+	label{
+		font-size: 24px;
+		margin: 10px 0px;
+	}
+	.radio{
+		width: 10px;
+	}
+	#submit{
+		color: white;
+	}
+</style>
+</head>
+<body>
+	<form action="/products/add" method="POST" enctype="multipart/form-data">
+		<label style="font-size: 24px; font-weight: bold;">Add Product From</label>
+		<select name="category">
+			<option th:each="category:${categories}" th:value=${category.id} th:text=${category.name}>
+		</select>
+		<input type="text" name="name" placeholder="Product Name"/><br>
+		<input type="text" name="manufacturer" placeholder="Product Manufacturer"/><br>
+		<input type="text" name="description" placeholder="Product description"/><br>
+		<input type="number" name="unitPrice" placeholder="Unit Price"/><br>
+		<input type="file" name="image" placeholder="Product Image"><br>
+		<label>Active: </label><br>
+		<input class="radio" type="radio" name="active" value="true"><label>Active</label><br>
+		<input class="radio" type="radio" name="active" value="false"><label>Inactive</label><br>
+		<label>Quantity: </label><br>
+		<input type="number" name="quantity" placholder="quantity">
+		<input id="submit" type="submit" name="submit" value="Add Product"/><br>
+		
+		
+	</form>
+</body>
+</html>

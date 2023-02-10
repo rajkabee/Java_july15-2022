@@ -1,9 +1,0 @@
-package coreJava.basics.OOP.concepts.inheritance;
-
-public class Employee extends Person{
-
-	int empId;
-	String dept;
-	String position;
-	float salary;
-}

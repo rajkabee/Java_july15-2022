@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="silverjewllery" class="com.example.springFramework.objectInjection.Category">
+		<property name="id" value="1"/>
+		<property name="name" value="Silver Jewllery"/>
+	</bean>
+	
+	<bean id="category" class="com.example.springFramework.objectInjection.Category">
+		<property name="id" value="1"/>
+		<property name="name" value="Plated Jewllery"/>
+	</bean>
+    
+    <bean id = "ring" class="com.example.springFramework.objectInjection.Product">
+    	<property name="id" value="123"/>
+    	<property name="name" value="gold ring"/>
+    	<property name="price" value="12345.34"/>
+    	<property name="category">
+    		<bean class="com.example.springFramework.objectInjection.Category">
+    			<property name="id" value="1"/>
+    			<property name="name" value="Jewllery"/>
+    		</bean>
+    	</property>
+    </bean>
+    <bean id = "chain" class="com.example.springFramework.objectInjection.Product">
+    	<constructor-arg name="id" value="456"/>
+    	<constructor-arg name="name" value="silver chain"/>
+    	<constructor-arg name="price" value="123456.34"/>
+    	<constructor-arg name="category" ref="silverjewllery"/>
+    </bean>
+    <bean id = "ear_ring" class="com.example.springFramework.objectInjection.Product" autowire="constructor">
+    	<constructor-arg name="id" value="12312"/>
+    	<constructor-arg name="name" value="Silver Earring"/>
+    	<constructor-arg name="price" value="3456.34"/>
+    </bean>
+</beans>

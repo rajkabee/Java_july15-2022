@@ -1,5 +1,0 @@
-package com.dursikshya.springBootDemo.model.repos;
-
-public interface UserRepository {
-
-}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+        
+    <context:property-placeholder location="application.properties"/>
+    
+     <bean id="jeans" class="com.rajkabee.springFramework.dependencyInjection.Category">
+		<property name="id" value="${fashion.id}"/>
+		<property name="name" value="${fashion.name}"/>
+	</bean>
+      
+    <bean id="bikes" class="com.rajkabee.springFramework.dependencyInjection.Category">
+		<property name="id" value="456"/>
+		<property name="name" value="Bikes"/>
+	</bean>
+	
+	 <bean id="scooters" class="com.rajkabee.springFramework.dependencyInjection.Category">
+		<property name="id" value="789"/>
+		<property name="name" value="Scooters"/>
+	</bean>	
+    <bean id="car" class="com.rajkabee.springFramework.dependencyInjection.Product" >
+    	<property name="id" value="1"/>
+    	<property name="name" value="G7"/>
+    	<property name="manufacturer" value="BMW"/>
+    	<property name="price" value="20000"/>
+    	<property name="active" value="true"/>
+    	<!-- 
+    	<property name="category" ref="bikes"/>
+    	-->
+    	
+    </bean>
+    <bean id="bike" class="com.rajkabee.springFramework.dependencyInjection.Product" autowire="constructor">
+    	<constructor-arg name="id" value="2"/>
+    	<constructor-arg name="name" value="R6"/>
+    	<constructor-arg name="manufacturer" value="YAMAHA"/>
+    	<constructor-arg name="price" value="7000"/>
+    	<constructor-arg name="active" value="true"/>
+    	<!--  
+    	<constructor-arg name="category" >
+    		<bean class="com.rajkabee.springFramework.dependencyInjection.Category">
+    			<property name="id" value="123"/>
+    			<property name="name" value="Cars"/>
+    		</bean>
+    	</constructor-arg>
+    	-->
+    </bean>
+        
+        
+</beans>

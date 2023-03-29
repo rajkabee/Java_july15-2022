@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean id="subash" class="com.example.springFramework2.Person">
+        	<property name="id" value="312312"/>
+        	<property name="name" value="Subash Mahato"/>
+        	<property name="email" value="subash@gmail.com"/>
+        </bean>
+        
+         <bean id="rahul" class="com.example.springFramework2.Person">
+        	<property name="id" value="312312"/>
+        	<property name="name" value="Rahul Bhujel"/>
+        	<property name="email" value="rahul@gmail.com"/>
+        </bean>
+</beans>

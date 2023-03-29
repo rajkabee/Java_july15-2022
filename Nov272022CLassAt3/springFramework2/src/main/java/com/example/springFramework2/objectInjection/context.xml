@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<context:property-placeholder location="applicaton.properties"/>
+	<bean id="student" class="com.example.springFramework2.objectInjection.Student">
+		<property name="id" value="1"/>
+		<property name="name" value="Sangam Subedi"/>
+		<property name="email" value="sangam@gmail.com"/>
+		<property name="laptop">
+			<bean class="com.example.springFramework2.objectInjection.Laptop">
+				<property name="id" value="543"/>
+				<property name="model" value="300"/>
+				<property name="brand" value="Lenovo"/>
+			</bean>
+		</property>
+	</bean>
+        
+	<bean id="lp1" class="com.example.springFramework2.objectInjection.Laptop">
+		<property name="id" value="123"/>
+		<property name="model" value="3400"/>
+		<property name="brand" value="Dell"/>
+	</bean>
+	<bean id="laptop" class="com.example.springFramework2.objectInjection.Laptop">
+		<property name="id" value="123"/>
+		<property name="model" value="3400"/>
+		<property name="brand" value="Dell"/>
+	</bean>
+    <bean id="pupil" class="com.example.springFramework2.objectInjection.Student" autowire="constructor">
+		<property name="id" value="2"/>
+		<property name="name" value="Sagar Pokhrel"/>
+		<property name="email" value="sagar@gmail.com"/>
+		<!-- <property name="laptop" ref="laptop"/> -->
+	</bean>
+        
+</beans>

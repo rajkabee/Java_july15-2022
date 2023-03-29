@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts::headElement">
+
+</head>
+<body>
+Date: <h6 th:text="${date}"></h6>
+<h1 th:replace="layouts::header"></h1>
+<p th:text="${msg}"></p>
+
+<div class="p-3 m-3 bg-primary text-white" th:if="${username}" th:text="${username}"></div>
+
+<ul>
+	<li th:each="item:${fruits}" th:text="${item}"></li>
+</ul>
+
+<div th:replace="layouts::footer"></div>
+
+
+</body>
+</html>

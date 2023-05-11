@@ -2,9 +2,8 @@ package j2se.eclipse.oop.encapsulation.p1;
 
 public class Person {
 //	private int nId;
-//	protected String name;
-//	String address;
-//	public String alias;
+	protected String fullname;
+	String address2;
 	private int nId;
 	private String name;
 	private String address;

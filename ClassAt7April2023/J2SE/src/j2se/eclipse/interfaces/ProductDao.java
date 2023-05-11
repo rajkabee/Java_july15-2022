@@ -6,7 +6,7 @@ public class ProductDao extends AbstractDao<Product>{
 
 	@Override
 	public int save(Product t) {
-		System.out.println("Product saved to the database!");
+		System.out.println("Product saved to the database!"+x);
 		return 0;
 	}
 

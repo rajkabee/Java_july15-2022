@@ -15,7 +15,7 @@ public class App {
 //		p.alias="kaley";
 //		emp.name="sadaasd";
 //		emp.address="asdsadsa";
-		p.setNid(123);
-		System.out.println(p.getNid());
+		//p.setNid(123);
+		//System.out.println(p.getNid());
 	}
 }

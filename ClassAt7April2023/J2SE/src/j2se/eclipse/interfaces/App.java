@@ -6,5 +6,6 @@ public class App {
 		pDao.connect();
 		pDao.save(new Product());
 		pDao.disconnect();
+		System.out.println(pDao.x);
 	}
 }

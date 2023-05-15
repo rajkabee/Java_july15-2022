@@ -5,16 +5,18 @@ public class Student {
 	private String name;
 	private String address;
 	private long contact;
+	private boolean active;
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Student(int id, String name, String address, long contact) {
+	public Student(int id, String name, String address, long contact, boolean active) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.contact = contact;
+		this.active = active;
 	}
 	public int getId() {
 		return id;
@@ -39,6 +41,13 @@ public class Student {
 	}
 	public void setContact(long contact) {
 		this.contact = contact;
+	}
+	
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 	@Override
 	public String toString() {

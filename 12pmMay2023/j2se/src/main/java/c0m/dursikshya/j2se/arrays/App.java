@@ -1,4 +1,4 @@
-package c0m.dursikshya.j2se;
+package c0m.dursikshya.j2se.arrays;
 
 /**
  * Hello world!

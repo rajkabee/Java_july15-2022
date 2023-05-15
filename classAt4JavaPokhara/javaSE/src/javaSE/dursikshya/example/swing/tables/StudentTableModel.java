@@ -5,18 +5,16 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 public class StudentTableModel extends DefaultTableModel {
-	String[] cols = {"id", "name", "address", "contact"};
-	ArrayList<Student> students = new ArrayList<>();
+	String[] cols = {"id", "name", "address", "contact", "Active"};
+	ArrayList<Student> students;
 	public StudentTableModel(ArrayList<Student> students) {
 		super();
 		this.students = students;
 	}
 	@Override
 	public int getColumnCount() {
-		if(cols.length!=0) {
 			return cols.length;
-		}
-		else return 0;
+		
 	}
 	@Override
 	public Class<?> getColumnClass(int col) {
@@ -25,6 +23,9 @@ public class StudentTableModel extends DefaultTableModel {
 		}
 		else if(col==3) {
 			return Long.class;
+		}
+		else if(col==4) {
+			return boolean.class;
 		}
 		else {
 			return String.class;
@@ -36,7 +37,12 @@ public class StudentTableModel extends DefaultTableModel {
 	}
 	@Override
 	public int getRowCount() {
-		return students.size();
+		if(students==null) {
+			return 0;
+		}
+		else {
+			return students.size();
+		}
 	}
 	@Override
 	public Object getValueAt(int row, int col) {
@@ -44,13 +50,16 @@ public class StudentTableModel extends DefaultTableModel {
 			return students.get(row).getId();
 		}
 		else if(col==1) {
-			return students.get(col).getName();
+			return students.get(row).getName();
 		}
 		else if(col==2) {
-			return students.get(col).getAddress();
+			return students.get(row).getAddress();
 		}
 		else if(col==3) {
-			return students.get(col).getContact();
+			return students.get(row).getContact();
+		}
+		else if(col==4) {
+			return students.get(row).isActive();
 		}
 		else {
 			return null;

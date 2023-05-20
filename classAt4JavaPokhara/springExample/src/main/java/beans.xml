@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<bean id="shirt" class="com.spring.springExample.Product">
+			<property name="id" value="123"/>
+			<property name="name" value="shirt"/>
+			<property name="manufacturer" value="Gucci"/>
+			<property name="price" value="12345.34"/>
+		</bean>
+		<bean id="shoes" class="com.spring.springExample.Product" scope="prototype">
+			<constructor-arg name="id" value="456"/>
+			<constructor-arg name="name" value="shoes"/>
+			<constructor-arg name="manufacturer" value="Prada"/>
+			<constructor-arg name="price" value="456533"/>
+		</bean>
+</beans>

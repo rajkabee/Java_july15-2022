@@ -1,11 +1,18 @@
 package com.spring.springExample;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("pd")
 public class Product {
 	private int id;
 	private String name;
 	private String manufacturer;
 	private float price;
-	
+	@Autowired
+	@Qualifier("category")
+	private Category category;
 	
 	
 	public Product() {
@@ -18,10 +25,7 @@ public class Product {
 		this.price = price;
 	}
 	
-	@Override
-	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", manufacturer=" + manufacturer + ", price=" + price + "]";
-	}
+	
 	public int getId() {
 		return id;
 	}
@@ -45,6 +49,30 @@ public class Product {
 	}
 	public void setPrice(float price) {
 		this.price = price;
+	}
+	
+	
+	
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public void init() {
+		System.out.println("Product bean created...");
+	}
+	
+	public void destroy() {
+		System.out.println("Product bean destroyed...");
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", manufacturer=" + manufacturer + ", price=" + price
+				+ ", category=" + category + "]";
 	}
 	
 	

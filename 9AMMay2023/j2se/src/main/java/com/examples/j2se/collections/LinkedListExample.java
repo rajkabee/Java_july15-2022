@@ -1,5 +1,6 @@
 package com.examples.j2se.collections;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 	public class LinkedListExample {
@@ -32,7 +33,11 @@ import java.util.LinkedList;
 //				System.out.println(x);
 //			}
 //			nums.forEach((x)->{System.out.println(x);});
-		nums.forEach(System.out::println);
+//			nums.forEach(System.out::println);
+		Iterator<Integer> iterator = nums.iterator();
+		while(iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
 		
 		
 	}

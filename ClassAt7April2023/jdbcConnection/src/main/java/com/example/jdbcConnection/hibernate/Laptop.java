@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,8 +28,9 @@ public class Laptop {
 	int sn;
 	@Column(name="model_no")
 	String model;
-	@Column(name="price")
+	@Column(name="cost")
 	float price;
+	
 	
 	public Laptop(int sn,String model, float price) {
 		super();

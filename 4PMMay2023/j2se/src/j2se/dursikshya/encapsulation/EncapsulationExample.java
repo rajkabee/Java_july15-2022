@@ -6,9 +6,9 @@ public class EncapsulationExample {
 //		p.id=123;
 //		p.name="Ratan Tata";
 //		p.address="Mumbai";
-		p.setId(123);
-		p.setName("Ratan Tata");
-		p.setAddress("Mumbai");
-		System.out.println(p.getId()+". "+p.getName()+"\t"+p.getAddress());
+//		p.setId(123);
+//		p.setName("Ratan Tata");
+//		p.setAddress("Mumbai");
+//		System.out.println(p.getId()+". "+p.getName()+"\t"+p.getAddress());
 	}
 }

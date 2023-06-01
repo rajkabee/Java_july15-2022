@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+	<h1>Products</h1>
+	
+	<div id="product-table " class="col-8 m-auto" th:if="${msg=='showAll'}">
+		<h1>All Products</h1> 
+		<span><a th:href="@{/products/add}"><button class="btn btn-primary btn-small float-right m-1">add a product</button></a></span>
+		<table class="table table-striped ">
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Manufacturer</th>
+				<th scope="col">Description</th>
+				<th scope="col">Price</th>
+				<th scope="col">Active</th>
+				<th scope="col">Action</th>
+			</tr>
+			<tr th:each="product: ${products}">
+				<td th:text="${product.getName()}"></td>
+				<td th:text="${product.manufacturer}"></td>
+				<td th:text="${product.description}"></td>
+				<td th:text="${product.price}"></td>
+				<td th:text="${product.active}"></td>
+				<td>
+					<a th:href="@{'/products/update/'+${product.id}}"><button class="btn btn-primary btn-small">Edit</button></a>
+				</td>
+			</tr>
+		</table>
+		
+	</div>
+	
+	
+	
+	<div class="product-form col-8 m-auto" th:if="${msg=='add'}">
+	
+	
+	
+	<h1>Product Form</h1>
+	<form action="products" name="product" method="post">
+		<div class="form-group">
+		    <label for="productName">Product Name: </label>
+		    <input type="text" class="form-control" name="name" id="productName" placeholder="Name">
+		</div>
+		  <div class="form-group">
+		    <label for="productManufacturer">Manufacturer: </label>
+		    <input type="text" class="form-control" name="manufacturer" id="productManufacturer" placeholder="Manufacturer">
+		  </div>
+		  <div class="form-group">
+		    <label for="productDescription">Description: </label>
+		    <textarea type="text-area" class="form-control" name="description" id="productDescription" placeholder="Products Description" rows="3"></textarea> 
+		  </div>
+		  <div class="form-group">
+		    <label for="productPrice">Price: </label>
+		    <input type="number" class="form-control" name="price" id="productPrice" placeholder="Products Price">
+		  </div>
+  		
+  		  <div class="form-check">
+		  <input class="form-check-input" type="radio" name="active" id="isActive" value="true" checked>
+		  <label class="form-check-label" for="isActive">
+		    Active
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="active" id="isNotActive" value="false">
+		  <label class="form-check-label" for="isNotActive">
+		    Inactive
+		  </label>
+		</div>
+  			<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+	</div>
+	
+	
+	<div class="product-form col-8 m-auto" th:if="${msg=='update'}">
+	
+	
+	
+	<h1>Product Update Form</h1>
+	<form action="products" name="products" method="put">
+		<input type="hidden" name="id" th:value="${product.id}">
+		<div class="form-group">
+		    <label for="productName">Product Name: </label>
+		    <input type="text" class="form-control" name="name" id="productName" th:value="${product.name}">
+		</div>
+		  <div class="form-group">
+		    <label for="productManufacturer">Manufacturer: </label>
+		    <input type="text" class="form-control" name="manufacturer" id="productManufacturer" th:value="${product.manufacturer}">
+		  </div>
+		  <div class="form-group">
+		    <label for="productDescription">Description: </label>
+		    <textarea type="text-area" class="form-control" name="description" id="productDescription" th:text="${product.description}" rows="3"></textarea> 
+		  </div>
+		  <div class="form-group">
+		    <label for="productPrice">Price: </label>
+		    <input type="number" class="form-control" name="price" id="productPrice"  th:value="${product.price}">
+		  </div>
+  		
+  		  <div class="form-check">
+		  <input class="form-check-input" type="radio" name="active" id="isActive" value="true" th:checked="${product.active}">
+		  <label class="form-check-label" for="isActive">
+		    Active
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="active" id="isNotActive" value="false" th:checked="${!product.active}">
+		  <label class="form-check-label" for="isNotActive">
+		    Inactive
+		  </label>
+		</div>
+  			<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+	</div>
+</body>
+</html>

@@ -1,6 +1,8 @@
 package com.examples.j2se.jdbc.dao;
 
+
 public class Student {
+	
 	int id;
 	String name;
 	long contact;

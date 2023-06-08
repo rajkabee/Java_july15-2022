@@ -4,8 +4,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="student")
 public class Student {
@@ -15,26 +22,9 @@ public class Student {
 	String name;
 	long contact;
 	boolean active;
-	
+	@OneToOne(mappedBy = "student")
 	Laptop laptop;
-	public Student() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Student(int id, String name, long contact, boolean active) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.contact = contact;
-		this.active = active;
-	}
-	public Student(String name, long contact, boolean active) {
-		super();
-		this.name = name;
-		this.contact = contact;
-		this.active = active;
-	}
-	
+
 	public Student(String name, long contact, boolean active, Laptop laptop) {
 		super();
 		this.name = name;
@@ -42,42 +32,7 @@ public class Student {
 		this.active = active;
 		this.laptop = laptop;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public long getContact() {
-		return contact;
-	}
-	public void setContact(long contact) {
-		this.contact = contact;
-	}
-	public boolean isActive() {
-		return active;
-	}
-	public void setActive(boolean active) {
-		this.active = active;
-	}
 	
-	public Laptop getLaptop() {
-		return laptop;
-	}
-	public void setLaptop(Laptop laptop) {
-		this.laptop = laptop;
-	}
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", contact=" + contact + ", active=" + active + ", laptop="
-				+ laptop + "]";
-	}
 	
 	
 }

@@ -4,6 +4,27 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>DeleteProductServlet</servlet-name>
+  	<display-name>DeleteProductServlet</display-name>
+  	<description></description>
+  	<servlet-class>servletsExample.DeleteProductServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SessionHandler</servlet-name>
+  	<display-name>SessionHandler</display-name>
+  	<description></description>
+  	<servlet-class>servletsExample.SessionHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DeleteProductServlet</servlet-name>
+  	<url-pattern>/DeleteProductServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SessionHandler</servlet-name>
+  	<url-pattern>/sessionHandler</url-pattern>
+  </servlet-mapping>
+
   
   
   

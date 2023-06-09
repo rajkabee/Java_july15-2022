@@ -22,7 +22,7 @@ public class ProductsServlet extends HttpServlet {
 			new Product(4, "Kiwi", "Bahgaladesh", 550f)
 		});
 		request.setAttribute("products", products);
-		//request.setAttribute("msg", "welcome to products page!");
+		request.setAttribute("msg", "welcome to products page!");
 		request.getRequestDispatcher("products.jsp").forward(request, response);
 	}
 

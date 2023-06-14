@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- <bean id="binam"
+		class="com.rajkabee.springFrameworkExample.autowiring.Student">
+		<constructor-arg name="id" value="321" />
+		<constructor-arg name="name" value="Binam Dahal" />
+		<constructor-arg name="email" value="Binam@gmail.com" />
+	</bean> -->
+	<bean id="sudhir"
+		class="com.rajkabee.springFrameworkExample.autowiring.Student" autowire="constructor">
+		<property name="id" value="123" />
+		<property name="name" value="Sudhir Sapkota" />
+		<property name="email" value="sudhir@gmail.com" />
+	</bean>
+	<bean id="dell"
+		class="com.rajkabee.springFrameworkExample.autowiring.Laptop" >
+		<property name="serial" value="34228466" />
+		<property name="model" value="DEll 3500" />
+	</bean>
+	<bean id="lenovo"
+		class="com.rajkabee.springFrameworkExample.autowiring.Laptop">
+		<property name="serial" value="4212312" />
+		<property name="model" value="Lenovo 300" />
+	</bean>
+	<bean id="laptop"
+		class="com.rajkabee.springFrameworkExample.autowiring.Laptop">
+		<property name="serial" value="5341231" />
+		<property name="model" value="Asus Tuf" />
+	</bean>
+</beans>

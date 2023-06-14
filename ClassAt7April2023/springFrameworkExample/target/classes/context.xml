@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="std"
+		class="com.rajkabee.springFrameworkExample.objectInjection.Student">
+		<constructor-arg name="id" value="321" />
+		<constructor-arg name="name" value="Binam Dahal" />
+		<constructor-arg name="email" value="Binam@gmail.com" />
+		<constructor-arg name="laptop">
+			<bean class="com.rajkabee.springFrameworkExample.objectInjection.Laptop">
+				<property name="serial" value="4212312" />
+				<property name="model" value="Lenovo 300" />
+			</bean>
+		</constructor-arg>
+	</bean>
+	<bean id="sts"
+		class="com.rajkabee.springFrameworkExample.objectInjection.Student"></bean>
+	<bean id="st"
+		class="com.rajkabee.springFrameworkExample.objectInjection.Student">
+		<property name="id" value="123" />
+		<property name="name" value="Sudhir Sapkota" />
+		<property name="email" value="sudhir@gmail.com" />
+		<property name="laptop" ref="laptop" />
+	</bean>
+	<bean id="laptop"
+		class="com.rajkabee.springFrameworkExample.objectInjection.Laptop">
+		<property name="serial" value="34228466" />
+		<property name="model" value="DEll 3500" />
+	</bean>
+
+</beans>

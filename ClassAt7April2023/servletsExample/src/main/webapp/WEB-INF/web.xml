@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>servletsExample.SessionHandler</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CookieHandler</servlet-name>
+  	<display-name>CookieHandler</display-name>
+  	<description></description>
+  	<servlet-class>servletsExample.CookieHandler</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>DeleteProductServlet</servlet-name>
   	<url-pattern>/DeleteProductServlet</url-pattern>
@@ -23,6 +29,10 @@
   <servlet-mapping>
   	<servlet-name>SessionHandler</servlet-name>
   	<url-pattern>/sessionHandler</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CookieHandler</servlet-name>
+  	<url-pattern>/cookieHandler</url-pattern>
   </servlet-mapping>
 
   

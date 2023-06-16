@@ -4,6 +4,7 @@ package myFirstDynamicWebProject;
 import jakarta.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,9 +17,15 @@ import myFirstDynamicWebProject.ProductDb.ProductDao;
 public class ProductServlet extends HttpServlet {
 	ProductDao pDao = new ProductDao();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String msg = "Hello from Product servlet";
-		request.setAttribute("message", msg);
-		
+		String msg = request.getParameter("msg");
+		request.setAttribute("msg", msg);
+		try {
+			List<Product> products = pDao.getAll();
+			request.setAttribute("products", products);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		request.getRequestDispatcher("products.jsp").forward(request, response);
 	}
 

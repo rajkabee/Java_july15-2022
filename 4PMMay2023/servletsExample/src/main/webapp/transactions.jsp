@@ -11,6 +11,7 @@
 </head>
 <body>
 	<h1>Transactions</h1>
+	<a href="transactions?msg=addTransaction"><button>Add New Transaction</button></a>
 	<table>
 		<thead>
 			<th>Tx. Id.</th>
@@ -44,6 +45,7 @@
 			<td>${tx.amount}</td>
 			<td>
 				<a href="updateTransaction?id=${tx.id}">update</a>
+				<a href="deleteTransaction?id=${tx.id}">delete</a>
 			</td>
 		</tr>
 	</c:forEach>
@@ -52,7 +54,8 @@
 	
 	
 	
-	<h1>New Transaction Form</h1>
+	<c:if test="${ msg=='addTransaction' }">
+		<h1>New Transaction Form</h1>
 	
 	<form action="transactions" method="POST">
 		<input type="text" name="sender" placeholder="Sender"><br>
@@ -60,16 +63,21 @@
 		<input type="text" name="amount" placeholder="Amount"><br>
 		<input type="Submit" value="submit">
 	</form>
+	</c:if>
 	
-	<h1>Update Transaction Form</h1>
-		<form action="transactions" method="POST">
-		<input type="hidden" name="id" value="${transaction.id}">
-		<input type="text" name="sender" value="${transaction.sender}"><br>
-		<input type="text" name="receiver" value="${transaction.receiver}"><br>
-		<input type="text" name="amount" value="${transaction.amount}"><br>
-		<input type="Submit" value="submit">
-	</form>
+	<c:if test="${ msg=='updateTransaction' }">
+		<h1>Update Transaction Form</h1>
+		<form action="updateTransaction" method="POST">
+			<input type="hidden" name="id" value="${transaction.id}">
+			<input type="text" name="sender" value="${transaction.sender}"><br>
+			<input type="text" name="receiver" value="${transaction.receiver}"><br>
+			<input type="text" name="amount" value="${transaction.amount}"><br>
+			<input type="Submit" value="submit">
+		</form>
+	</c:if>
 </body>
+
+
 </html>
 
 

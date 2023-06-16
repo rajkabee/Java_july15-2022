@@ -26,6 +26,7 @@ public class TransactionServlet extends HttpServlet{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		req.setAttribute("msg", req.getParameter("msg"));
 		req.getRequestDispatcher("transactions.jsp").forward(req, resp);
 		
 	}

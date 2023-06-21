@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments::head-element">
+	
+	</head>
+	<body>
+		<div class="row container bg-info">
+			<div th:replace="fragments::header"> </div>
+		</div>
+		<ul>
+			<a href="transactions"><li>Transactions</li></a>
+			<a href="deposit"><li>Deposit</li></a>
+			<a href="withdraw"><li>Withdraw</li></a>
+			<a href="accounts"><li>Accounts</li></a>
+			<a href="accounts/new"><li>New Account</li></a>
+			
+		</ul>
+	</body>
+</html>

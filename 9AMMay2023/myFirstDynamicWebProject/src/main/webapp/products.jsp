@@ -33,6 +33,7 @@
 			<td>${ product.inStock }</td>
 			<td>
 				<a href="updateProduct?id=${ product.id }">Update</a>
+				<a href="deleteProduct?id=${ product.id }">Delete</a>
 			</td>
 		</tr>
 	</c:forEach>
@@ -51,6 +52,23 @@
 	<input type="number" name="price" placeholder="Product Price"><br>
 	<input type="radio" name="inStock" value="true"><label>is in stock</label>
 	<input type="radio" name="inStock" value="false"><label>out of stock</label><br>
+	<input type="submit" value="submit">
+</form>
+</c:if>
+
+
+<c:if test="${ msg=='updateProduct' }">
+<h2>Product Update Form</h2>
+<form action="updateProduct" method="post">
+	<input type="hidden" name="id" value="${ product.id }">
+	<input type="text" name="name" value="${ product.name }"><br>
+	<input type="text" name="manufacturer" value="${ product.manufacturer }"><br>
+	<input type="textarea" name="description" value="${ product.description }"><br>
+	<input type="number" name="price" value="${ product.price }"><br>
+	<input type="radio" name="inStock" value="true" 
+	${product.inStock==true?'checked':''}><label>is in stock</label>
+	<input type="radio" name="inStock" value="false"
+	 ${product.inStock==true?'':'checked'}><label>out of stock</label><br>
 	<input type="submit" value="submit">
 </form>
 </c:if>

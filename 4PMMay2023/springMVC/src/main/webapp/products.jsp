@@ -1,3 +1,4 @@
+<%@ page isELIgnored="false"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,6 +9,7 @@
 </head>
 <body>
 <h1>Products</h1>
-${ msg }
+<%=request.getAttribute("msg") %>
+${msg}
 </body>
 </html>

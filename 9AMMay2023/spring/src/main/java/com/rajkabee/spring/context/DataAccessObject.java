@@ -1,4 +1,4 @@
-package com.rajkabee.spring;
+package com.rajkabee.spring.context;
 
 public class DataAccessObject {
 	String url;

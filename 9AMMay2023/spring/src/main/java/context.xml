@@ -6,7 +6,7 @@
    
     <bean 
     id="dao" 
-    class="com.rajkabee.spring.DataAccessObject"
+    class="com.rajkabee.spring.context.DataAccessObject"
     init-method="init"
     destroy-method="destroy"
     scope="prototype"

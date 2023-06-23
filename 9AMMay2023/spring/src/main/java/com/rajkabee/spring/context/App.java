@@ -1,4 +1,4 @@
-package com.rajkabee.spring;
+package com.rajkabee.spring.context;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;

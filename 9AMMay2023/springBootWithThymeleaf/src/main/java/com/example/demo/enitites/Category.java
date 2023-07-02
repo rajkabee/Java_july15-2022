@@ -24,4 +24,9 @@ public class Category {
 	String name;
 	@OneToMany
 	List<Course> courses;
+	public Category(String name) {
+		super();
+		this.name = name;
+	}
+	
 }

@@ -1,6 +1,7 @@
 package com.rajkabee.api.restControllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,10 @@ public class ProductController {
 	@RequestMapping(value="/", method= RequestMethod.POST)
 	public Product addProduct(@RequestBody Product product) {
 		return productRepo.save(product);
+	}
+	@GetMapping("/hello")
+	public String hello() {
+		return "hello from producer";
 	}
 	
 }

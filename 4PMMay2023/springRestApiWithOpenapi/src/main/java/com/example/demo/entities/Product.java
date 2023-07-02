@@ -1,36 +1,54 @@
 package com.example.demo.entities;
 
-import java.sql.Date;
-
+import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+import jakarta.persistence.*;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
 @Entity
+@Table(name="product")
+@Data
 public class Product {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	int id;
-	String name;
-	String description;
-	String manufacturer;
-	float unitPrice;
-	@CreationTimestamp
-	Date dateCreated;
-	@UpdateTimestamp
-	Date lastUpdated;
-	@ManyToOne
-	Product category;
-	
-	
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private ProductCategory category;
+
+    @Column(name = "sku")
+    private String sku;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "unit_price")
+    private BigDecimal unitPrice;
+
+    @Column(name = "image_url")
+    private String imageUrl;
+
+    @Column(name = "active")
+    private boolean active;
+
+    @Column(name = "units_in_stock")
+    private int unitsInStock;
+
+    @Column(name = "date_created")
+    @CreationTimestamp
+    private Date dateCreated;
+
+    @Column(name = "last_updated")
+    @UpdateTimestamp
+    private Date lastUpdated;
 }

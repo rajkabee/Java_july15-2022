@@ -25,5 +25,12 @@ public class Course {
 	String description;
 	@ManyToOne
 	Category category;
+	public Course(String title, String description, Category category) {
+		super();
+		this.title = title;
+		this.description = description;
+		this.category = category;
+	}
+	
 	
 }

@@ -1,6 +1,8 @@
 package com.example.demo.repos;
 
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,4 +15,5 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
 
 	
 	public Page<Product> findByCategoryId(@RequestParam("id") long id, Pageable pageable);
+	public List<Product> findByCategoryId(@RequestParam("id") long id);
 }

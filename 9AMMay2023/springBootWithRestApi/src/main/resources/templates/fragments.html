@@ -9,7 +9,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link th:href="@{'img/favicon.png'}" rel="icon">
+    <link th:href="@{'/img/favicon.png'}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -55,6 +55,7 @@
                     <a class="text-dark px-2" href="">
                         <i class="fab fa-facebook-f"></i>
                     </a>
+                    <button th:onclick="'alert(\'static variable used here.\');'">using static variable</button>
                     <a class="text-dark px-2" href="">
                         <i class="fab fa-twitter"></i>
                     </a>
@@ -93,9 +94,9 @@
                     <i class="fas fa-heart text-primary"></i>
                     <span class="badge">0</span>
                 </a>
-                <a href="" class="btn border">
+                <a th:href="@{'/products/cart'}" class="btn border">
                     <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
+                    <span class="badge " id="totalCartItems">0</span>
                 </a>
             </div>
         </div>
@@ -250,31 +251,7 @@
     </div>
     <!-- Categories End -->
 
-	<div th:fragment="products" class="container-fluid pt-5">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Products</span></h2>
-        </div>
-        <div  class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1" th:Each="product:${products}">
-                <div class="card product-item border-0 mb-4" >
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" th:src="@{'/'+${product.imageUrl}}" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3" th:text="${product.name}">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6 th:text="${product.unitPrice}"></h6><h6 class="text-muted ml-2"><del th:text="${product.unitPrice+23}"></del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a th:href="'/products/'+${product.id}" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <button th:attr="onclick=|addToCart('${product.id}')|"  class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+	
     
 
     <!-- Footer Start -->

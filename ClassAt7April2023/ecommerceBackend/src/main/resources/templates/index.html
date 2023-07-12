@@ -1,0 +1,12 @@
+<html xmlns:th="https://www.thymeleaf.org">
+	<head th:replace="~{root::headElement}"></head>
+	<body>
+		<div th:replace="~{root::topbar}"></div>
+		<div th:replace="~{root::navbar}"></div>
+		<h1 th:text="${msg}"></h1>
+		<th:block th:replace="~{root::products}"></th:block>
+		<div th:replace="~{root::vendors}"></div>
+		<div th:replace="~{root::footer}"></div>
+	</body>
+
+</html>

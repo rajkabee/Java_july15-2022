@@ -1,4 +1,4 @@
-package com.example.j2se.oop;
+package com.example.j2se.collections;
 
 import java.util.ArrayList;
 

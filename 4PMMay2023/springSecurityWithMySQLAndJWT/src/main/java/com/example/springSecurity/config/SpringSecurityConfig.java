@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.example.springSecurity.jwt.JwtAuthenticationEntryPoint;
 
@@ -26,23 +27,38 @@ public class SpringSecurityConfig{
     private JwtAuthenticationEntryPoint point;
     @Autowired
     private JwtAuthenticationFilter filter;
-	@Bean
-	SecurityFilterChain web(HttpSecurity http) throws Exception {
-		http.csrf(csrf -> csrf.disable())
-			.authorizeHttpRequests(
-				request->{
-					request.requestMatchers("/admin").hasRole("ADMIN")
-							.requestMatchers("/user").hasAnyRole("USER","ADMIN")
-							.requestMatchers("/", "/createUsers","/login").permitAll()
-							.anyRequest()
-							.authenticated()
-							.exceptionHandling(ex -> ex.authenticationEntryPoint(point))
-				            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-				}
-				)
-			.formLogin();
-		return http.build();
-	}
+
+	/*
+	 * @Bean SecurityFilterChain web(HttpSecurity http) throws Exception {
+	 * http.csrf(csrf -> csrf.disable()) .authorizeHttpRequests( request->{
+	 * request.requestMatchers("/admin").hasRole("ADMIN")
+	 * .requestMatchers("/user").hasAnyRole("USER","ADMIN") .requestMatchers("/",
+	 * "/createUsers","/login").permitAll() .anyRequest() .authenticated()
+	 * 
+	 * } ) .exceptionHandling(ex -> ex.authenticationEntryPoint(point))
+	 * .sessionManagement(session ->
+	 * session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) .formLogin();
+	 * 
+	 * 
+	 * return http.build(); }
+	 */
+    
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+        http.csrf(csrf -> csrf.disable())
+                .authorizeRequests()
+                .requestMatchers("/hello").authenticated()
+                .requestMatchers("/auth/login","/createUsers").permitAll()
+                .anyRequest()
+                .authenticated()
+                .and().exceptionHandling(ex -> ex.authenticationEntryPoint(point))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
+        return http.build();
+    }
+    
+    
 	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();

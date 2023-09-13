@@ -22,8 +22,8 @@ public class SecurityConfig {
 
         http.csrf(csrf -> csrf.disable())
                 .authorizeRequests()
-                .requestMatchers("/hello").authenticated()
-                .requestMatchers("/auth/login").permitAll()
+                .requestMatchers("/user", "/admin").authenticated()
+                .requestMatchers("/auth/login", "/","/createUsers").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and().exceptionHandling(ex -> ex.authenticationEntryPoint(point))

@@ -7,7 +7,12 @@ public class Team {
 	String teamName;
 	List<Member> members=new ArrayList<>();
 	public  void addMember(Member member) {
-		members.add(member);
+		if(members.size()<15) {
+			members.add(member);
+		}
+		else {
+			System.out.println("Members Limit crossed!");
+		}
 	}
 	public void removeMember(Member member) {
 		if(members.indexOf(member)>0) {

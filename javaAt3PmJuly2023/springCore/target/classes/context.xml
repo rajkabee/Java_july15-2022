@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <bean id="savings" class="com.rajkabee.springCore.AccountType" scope="prototype">
+        	<constructor-arg name="id" value="123"/>
+        	<constructor-arg name="name" value="Savings"/>
+        	<constructor-arg name="interest" value="5.44"/>
+        </bean>
+       <bean id="fixed" class="com.rajkabee.springCore.AccountType">
+        	<property name="id" value="456"/>
+        	<property name="name" value="fixed"/>
+        	<property name="interest" value="13.33"/>
+        </bean>
+</beans>
